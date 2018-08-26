@@ -1,3 +1,4 @@
+#! python3
 # Make a Desktop cleaner programme that takes all files and moves them into a specific set of folders, based on the extension of the file.
 
 #Ver1
