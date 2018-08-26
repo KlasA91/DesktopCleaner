@@ -54,34 +54,22 @@ PictureExtensions = ['.jpeg', '.gif', '.png', 'jpg']
 
 #For loop, run through all files of the given directory and move them according to their file extension (e.g. files with .xlsx are moved to the Excel folder)
 for folderName, subfolders, filenames in os.walk('C:\\Users\\Klas\\Desktop\\TestVersion'):
-    print('er vi her endnu1?')
     for file in filenames:
-        print('er vi her endnu2?')
         if file.endswith(tuple(ExcelExtensions)):
-            print('er vi her endnu?3')
             shutil.move((os.path.join(folderName, file)), (excelpath))
-            print('1')
         elif file.endswith('.docx'):
             shutil.move((os.path.join(folderName, file)), (wordpath))
-            print('2')
         elif file.endswith('.pptx'):
             shutil.move((os.path.join(folderName, file)), (Powerpointpath))
-            print('3')
         elif file.endswith('.pdf'):
             shutil.move((os.path.join(folderName, file)), (PDFpath))
-            print('4')
         elif file.endswith('.xml'):
             shutil.move((os.path.join(folderName, file)), (XMLpath))
-            print('5')
         elif file.endswith('.json'):
             shutil.move((os.path.join(folderName, file)), (JSONpath))
-            print('6')
         elif file.endswith('.txt'):
             shutil.move((os.path.join(folderName, file)), (TXTpath))
-            print('7')
         elif file.endswith(tuple(PictureExtensions)):
             shutil.move((os.path.join(folderName, file)), (Picturepath))
-            print('8')
         else:
             shutil.move((os.path.join(folderName, file)), (ElsePath))
-            print('9')
