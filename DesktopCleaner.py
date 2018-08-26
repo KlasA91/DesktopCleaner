@@ -11,6 +11,10 @@
 
 #Run through the whole desktop
 
+###BEFORE RUNNING THE PROGRAM###
+#Ensure that you have not installed anything on the desktop, as it will take the file, and move it to a different folder. Move all big installs to a different directory before starting the program.
+
+
 import shutil
 import os
 import pyperclip
@@ -25,6 +29,7 @@ XMLpath = 'C:\\Users\\Klas\\Desktop\\Recycling\\XML'
 JSONpath = 'C:\\Users\\Klas\\Desktop\\Recycling\\JSON'
 TXTpath = 'C:\\Users\\Klas\\Desktop\\Recycling\\TXT'
 Picturepath = 'C:\\Users\\Klas\\Desktop\\Recycling\\Picture'
+Zippath = 'C:\\Users\\Klas\\Desktop\\Recycling\\ZIP'
 ElsePath = 'C:\\Users\\Klas\\Desktop\\Recycling\\EverythingElse'
 
 #If the folder is not created, create it
@@ -46,6 +51,8 @@ if not os.path.exists(TXTpath):
     os.makedirs(TXTpath)
 if not os.path.exists(Picturepath):
     os.makedirs(Picturepath)
+if not os.path.exists(Zippath):
+    os.makedirs(Zippath)
 if not os.path.exists(ElsePath):
     os.makedirs(ElsePath)
 
@@ -69,6 +76,8 @@ for folderName, subfolders, filenames in os.walk('C:\\Users\\Klas\\Desktop'):
             shutil.move((os.path.join(folderName, file)), (JSONpath))
         elif file.endswith('.txt'):
             shutil.move((os.path.join(folderName, file)), (TXTpath))
+        elif file.endswith('.zip'):
+            shutil.move((os.path.join(folderName, file)), (Zippath))
         elif file.endswith(tuple(PictureExtensions)):
             shutil.move((os.path.join(folderName, file)), (Picturepath))
         else:
