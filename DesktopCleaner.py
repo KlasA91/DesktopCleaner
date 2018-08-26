@@ -53,7 +53,7 @@ ExcelExtensions = [".xlsx", ".xls", ".xlsm"]
 PictureExtensions = ['.jpeg', '.gif', '.png', 'jpg']
 
 #For loop, run through all files of the given directory and move them according to their file extension (e.g. files with .xlsx are moved to the Excel folder)
-for folderName, subfolders, filenames in os.walk('C:\\Users\\Klas\\Desktop\\TestVersion'):
+for folderName, subfolders, filenames in os.walk('C:\\Users\\Klas\\Desktop'):
     for file in filenames:
         if file.endswith(tuple(ExcelExtensions)):
             shutil.move((os.path.join(folderName, file)), (excelpath))
